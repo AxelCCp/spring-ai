@@ -1,0 +1,7 @@
+# Notas personales
+notes.txt
+*.notes.txt
+
+# Credenciales y variables de entorno
+.env
+.env.*
