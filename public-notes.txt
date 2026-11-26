@@ -1,0 +1,52 @@
+
+PG VECTOR EN DOCKER:
+
+
+sudo docker pull pgvector/pgvector:pg16-trixie
+
+sudo docker run -d --name postgres --restart always -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=spring_ai_rag pgvector/pgvector:pg16-trixie 
+
+sudo docker ps
+
+sudo docker exec -it postgres psql -U postgres -d spring_ai_rag
+
+        ^
+spring_ai_rag=# CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION
+spring_ai_rag=# CREATE EXTENSION IF NOT EXISTS hstore;
+CREATE EXTENSION
+spring_ai_rag=# CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION
+spring_ai_rag=# select extname from pg_extension;
+  extname  
+-----------
+ plpgsql
+ vector
+ hstore
+ uuid-ossp
+(4 rows)
+
+spring_ai_rag=# 
+
+
+:::::::::::::::::::::::::::::::::::::::::
+
+
+OLLAMA
+
+ollama pull nomic-embed-text
+
+o 
+
+ollama pull qwen3-embedding:0.6b
+
+
+---
+
+boo@fedora:~/Documentos/a0_study/a3_spring_ai_andresGuzman$ ollama list
+NAME                    ID              SIZE      MODIFIED      
+qwen3-embedding:0.6b    ac6da0dfba84    639 MB    7 seconds ago    
+qwen3:4b                359d7dd4bcda    2.5 GB    22 hours ago  
+
+--- 
+
